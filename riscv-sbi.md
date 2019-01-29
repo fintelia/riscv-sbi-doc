@@ -58,7 +58,7 @@ syscall calling convention (which in turn is very similar to the function callin
 convention). Every SBI call uses *ecall* instructions to make a request to the SEE
 environment. When executed in S-mode, it generates an environment-call-from-S-mode
 exception and performs no other operation. The required arguments are passed
-through registers *a0-a2* and the SBI call type is passed via register *a7*. Once
+through registers *a0-a3* and the SBI call type is passed via register *a7*. Once
 the machine mode receives the trap, it identifies the type of SBI call from *a7*
 register and perform required operation. Any unsupported SBI call should return error code *-38*
 (which is the value of -ENOSYS in Linux) to indicate the supervisor mode that it is not supported.
